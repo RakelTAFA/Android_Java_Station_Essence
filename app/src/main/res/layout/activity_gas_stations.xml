@@ -8,8 +8,23 @@
 
 
     <ListView
+        android:id="@+id/gas_station_list_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
         android:layout_height="553dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="177dp" />
+
+    <RadioGroup
+        android:id="@+id/gas_types_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/gas_station_list_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
