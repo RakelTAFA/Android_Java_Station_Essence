@@ -18,11 +18,42 @@
 
     <RadioGroup
         android:id="@+id/gas_types_radio_group"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="47dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/request_choice_spinner"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <RadioButton
+            android:id="@+id/radio_button_TYPE_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPL" />
+
+
+        <RadioButton
+            android:id="@+id/radio_button_TYPE_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SP-95" />
+
+
+        <RadioButton
+            android:id="@+id/radio_button_TYPE_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SP-98" />
+
+
+        <RadioButton
+            android:id="@+id/radio_button_TYPE_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gas" />
+
+    </RadioGroup>
 
     <Spinner
         android:id="@+id/request_choice_spinner"

@@ -36,7 +36,22 @@ public class GasStationAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int i, View view, ViewGroup viewGroup)
+    {
+        ConstraintLayout gasStationLayout;
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+
+        if (view == null)
+        {
+            gasStationLayout = (ConstraintLayout) inflater.inflate(R.layout.activity_adapter_gas_station, viewGroup, false);
+        }
+        else
+        {
+            gasStationLayout = (ConstraintLayout) view;
+        }
+
+
+
         return null;
     }
 

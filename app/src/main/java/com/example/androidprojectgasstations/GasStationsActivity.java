@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
@@ -32,7 +33,12 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
         Spinner spinnerChoice = findViewById(R.id.request_choice_spinner);
         Spinner spinnerSort = findViewById(R.id.request_sort_spinner);
 
-        // displayGasStation();
+        ArrayAdapter<String> spinnerChoiceAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerChoiceList);
+        ArrayAdapter<String> spinnerSortAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerSortList);
+
+        spinnerChoice.setAdapter(spinnerChoiceAdapter);
+        spinnerSort.setAdapter(spinnerSortAdapter);
+
         getStations();
     }
 
