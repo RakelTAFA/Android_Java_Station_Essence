@@ -19,9 +19,9 @@
     <RadioGroup
         android:id="@+id/gas_types_radio_group"
         android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="@id/gas_station_list_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
