@@ -13,7 +13,7 @@ public class ApiManager {
 
     private static ApiManager instance;
 
-    public GasStationService getClockService() {
+    public GasStationService getGasStationService() {
         return gasStationService;
     }
 

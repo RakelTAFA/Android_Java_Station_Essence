@@ -3,16 +3,59 @@ package com.example.androidprojectgasstations;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
-public class GasStationsActivity extends AppCompatActivity {
+import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
+import com.example.androidprojectgasstations.manager.MainActivityController;
+import com.example.androidprojectgasstations.model.GasStation;
 
-    /* API
-    https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-carburants-fichier-instantane-test-ods-copie&q=&facet=id&facet=adresse&facet=ville&facet=prix_maj&facet=prix_nom&facet=com_arm_name&facet=epci_name&facet=dep_name&facet=reg_name&facet=services_service&facet=horaires_automate_24_24
-    */
-    
+
+public class GasStationsActivity extends AppCompatActivity implements IGasStationDataManagerCallBack {
+
+    GasStation gasStation = null;
+    private MainActivityController mainActivityController = new MainActivityController();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_stations);
+        // displayGasStation();
     }
+
+
+    @Override
+    public void getGasStationsResponseSuccess(GasStation gs) {
+        Log.e("SUCCESS main activity", "SUCCESS main activity");
+        /*
+        TextView t = findViewById(R.id.tv_hello);
+        t.setText(clock.getDatetime());
+         */
+    }
+
+
+    @Override
+    public void getGasStationsResponseError(String message) {
+        Log.e("ERROR main activity", "Response Error " + message);
+        /*
+        AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
+        alert.setTitle("Erreur").setMessage("une erreur est apparue lors de la recherche de données");
+        alert.setCancelable(false);
+        alert.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        alert.setIcon(R.drawable.ic_launcher_background);
+        alert.create().show();
+
+         */
+    }
+
+
+    private void displayGasStation()
+    {
+
+    }
+
 }
