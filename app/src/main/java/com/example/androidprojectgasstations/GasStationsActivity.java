@@ -6,20 +6,48 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
-import com.example.androidprojectgasstations.manager.MainActivityController;
+import com.example.androidprojectgasstations.manager.GasStationsActivityController;
 import com.example.androidprojectgasstations.model.GasStation;
+import com.example.androidprojectgasstations.model.GasStationFields;
+import com.example.androidprojectgasstations.model.GasStationRecords;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class GasStationsActivity extends AppCompatActivity implements IGasStationDataManagerCallBack {
 
     GasStation gasStation = null;
-    private MainActivityController mainActivityController = new MainActivityController();
+    private GasStationsActivityController gasStationsActivityController = new GasStationsActivityController();
+    List<GasStationFields> listGasStations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_stations);
         // displayGasStation();
+        getStations();
+    }
+
+
+    private void getStations()
+    {
+        gasStationsActivityController.getGasStations(new IGasStationDataManagerCallBack() {
+            @Override
+            public void getGasStationsResponseSuccess(GasStation gasStation) {
+                List<GasStationRecords> listRecords = gasStation.getRecords();
+                for (GasStationRecords gsRecords : listRecords)
+                {
+                    Log.d("RECORDS", gsRecords.getRecordid());
+                    Log.d("RECORDS_FIELD", gsRecords.getFields().getAdresse());
+                }
+            }
+
+            @Override
+            public void getGasStationsResponseError(String message) {
+
+            }
+        });
     }
 
 

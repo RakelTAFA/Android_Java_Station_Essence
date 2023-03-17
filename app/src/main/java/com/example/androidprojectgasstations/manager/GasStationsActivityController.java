@@ -10,11 +10,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivityController {
+public class GasStationsActivityController {
 
     private final ApiManager apiManager;
 
-    public MainActivityController() {
+    public GasStationsActivityController() {
         apiManager = ApiManager.getInstance();
     }
 
@@ -40,7 +40,7 @@ public class MainActivityController {
             @Override
             public void onFailure(Call<GasStation> call, Throwable t) {
                 Log.e("onFailure", t.getLocalizedMessage());
-                callBack.getGasStationsResponseError("Erreur lors de la requête : " + t.getLocalizedMessage());
+                callBack.getGasStationsResponseError("Erreur lors de la requete : " + t.getLocalizedMessage());
             }
         });
     }

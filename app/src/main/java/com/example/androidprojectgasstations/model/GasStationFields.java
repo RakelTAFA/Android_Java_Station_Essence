@@ -4,10 +4,11 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //import java.io.Serializable;
+import java.io.Serializable;
 import java.util.List;
 
 
-public class GasStationFields // implements Serializable
+public class GasStationFields implements Serializable
 {
 
     @SerializedName("geom")

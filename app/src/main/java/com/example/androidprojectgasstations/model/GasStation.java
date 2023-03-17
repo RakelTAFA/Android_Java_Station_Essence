@@ -1,11 +1,12 @@
 
 package com.example.androidprojectgasstations.model;
 //import java.io.Serializable;
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class GasStation // implements Serializable
+public class GasStation implements Serializable
 {
 
     @SerializedName("records")
