@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Spinner;
 
 import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
 import com.example.androidprojectgasstations.manager.GasStationsActivityController;
@@ -19,12 +20,18 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
 
     GasStation gasStation = null;
     private GasStationsActivityController gasStationsActivityController = new GasStationsActivityController();
+    String[] spinnerChoiceList = { "Prix" , "Date" };
+    String[] spinnerSortList = { "Croissant" , "Décroissant" };
     List<GasStationFields> listGasStations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_stations);
+
+        Spinner spinnerChoice = findViewById(R.id.request_choice_spinner);
+        Spinner spinnerSort = findViewById(R.id.request_sort_spinner);
+
         // displayGasStation();
         getStations();
     }
