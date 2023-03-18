@@ -1,12 +1,19 @@
 package com.example.androidprojectgasstations;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
+import com.example.androidprojectgasstations.fragment.GasStationListFragment;
+import com.example.androidprojectgasstations.fragment.GasStationMapFragment;
 import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
 import com.example.androidprojectgasstations.manager.GasStationsActivityController;
 import com.example.androidprojectgasstations.model.GasStation;
@@ -21,23 +28,39 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
 
     GasStation gasStation = null;
     private GasStationsActivityController gasStationsActivityController = new GasStationsActivityController();
-    String[] spinnerChoiceList = { "Prix" , "Date" };
-    String[] spinnerSortList = { "Croissant" , "Décroissant" };
+
     List<GasStationFields> listGasStations = new ArrayList<>();
+
+    // Activity elements
+    Button listFragmentButton, mapFragmentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_stations);
+        replaceFragment(new GasStationListFragment());
 
-        Spinner spinnerChoice = findViewById(R.id.request_choice_spinner);
-        Spinner spinnerSort = findViewById(R.id.request_sort_spinner);
+        listFragmentButton = findViewById(R.id.list_button_fragment);
+        mapFragmentButton = findViewById(R.id.map_button_fragment);
 
-        ArrayAdapter<String> spinnerChoiceAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerChoiceList);
-        ArrayAdapter<String> spinnerSortAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerSortList);
+        listFragmentButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                replaceFragment(new GasStationListFragment());
+            }
+        });
 
-        spinnerChoice.setAdapter(spinnerChoiceAdapter);
-        spinnerSort.setAdapter(spinnerSortAdapter);
+        mapFragmentButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                replaceFragment(new GasStationMapFragment());
+            }
+        });
+
+
+
 
         getStations();
     }
@@ -93,10 +116,14 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
          */
     }
 
+    // Fragments
 
-    private void displayGasStation()
+    private void replaceFragment(Fragment fragment)
     {
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_layout, fragment);
+        fragmentTransaction.commit();
     }
 
 }

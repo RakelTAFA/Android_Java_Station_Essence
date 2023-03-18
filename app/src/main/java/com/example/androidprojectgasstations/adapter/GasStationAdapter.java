@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.androidprojectgasstations.R;
 import com.example.androidprojectgasstations.model.GasStationFields;
 
 import java.util.ArrayList;
