@@ -30,12 +30,11 @@ public class GasStationListFragment extends Fragment {
         Spinner spinnerChoice = (Spinner) view.findViewById(R.id.request_choice_spinner);
         Spinner spinnerSort = (Spinner) view.findViewById(R.id.request_sort_spinner);
 
-        ArrayAdapter<String> spinnerChoiceAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerChoiceList);
-        ArrayAdapter<String> spinnerSortAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerSortList);
+        ArrayAdapter<String> spinnerChoiceAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, spinnerChoiceList);
+        ArrayAdapter<String> spinnerSortAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, spinnerSortList);
 
         spinnerChoice.setAdapter(spinnerChoiceAdapter);
         spinnerSort.setAdapter(spinnerSortAdapter);
-
 
         return view;
     }
