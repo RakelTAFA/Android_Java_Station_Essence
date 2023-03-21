@@ -1,5 +1,6 @@
 package com.example.androidprojectgasstations.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +18,24 @@ import java.util.ArrayList;
 public class GasStationAdapter extends BaseAdapter {
 
     ArrayList<GasStationFields> fieldList = null;
+    Context context;
+
+    public GasStationAdapter(Context context, ArrayList<GasStationFields> fieldList)
+    {
+        this.context = context;
+        this.fieldList = fieldList;
+    }
 
     @Override
     public int getCount()
     {
-        return 0;
+        return fieldList.size();
     }
 
     @Override
     public Object getItem(int i)
     {
-        return 0; // contactList.get(i);
+        return fieldList.get(i);
     }
 
     @Override
@@ -51,9 +59,23 @@ public class GasStationAdapter extends BaseAdapter {
             gasStationLayout = (ConstraintLayout) view;
         }
 
+        GasStationFields gasStationFields = fieldList.get(i);
+        TextView gasPrice, gasCity, gasAddress, gasPostalCode, gasType;
 
+        gasPrice = (TextView) gasStationLayout.findViewById(R.id.gas_price);
+        gasCity = (TextView) gasStationLayout.findViewById(R.id.gas_city);
+        gasAddress = (TextView) gasStationLayout.findViewById(R.id.gas_address);
+        gasPostalCode = (TextView) gasStationLayout.findViewById(R.id.gas_postal_code);
+        gasType = (TextView) gasStationLayout.findViewById(R.id.gas_type);
 
-        return null;
+        Float gasPriceString = gasStationFields.getPrixValeur();
+
+        gasPrice.setText(gasPriceString.toString());
+        gasCity.setText(gasStationFields.getComName());
+        gasAddress.setText(gasStationFields.getAdresse());
+        gasPostalCode.setText(gasStationFields.getComCode());
+        gasType.setText(gasStationFields.getPrixNom());
+
+        return gasStationLayout;
     }
-
 }

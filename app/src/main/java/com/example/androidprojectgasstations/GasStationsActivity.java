@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.example.androidprojectgasstations.adapter.GasStationAdapter;
 import com.example.androidprojectgasstations.fragment.GasStationListFragment;
 import com.example.androidprojectgasstations.fragment.GasStationMapFragment;
 import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
@@ -26,10 +27,10 @@ import java.util.List;
 
 public class GasStationsActivity extends AppCompatActivity implements IGasStationDataManagerCallBack {
 
-    GasStation gasStation = null;
     private GasStationsActivityController gasStationsActivityController = new GasStationsActivityController();
+    GasStationAdapter gasStationAdapter = null;
 
-    List<GasStationFields> listGasStations = new ArrayList<>();
+    ArrayList<GasStationFields> listGasStations = new ArrayList<>();
 
     // Activity elements
     Button listFragmentButton, mapFragmentButton;
@@ -58,8 +59,6 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
                 replaceFragment(new GasStationMapFragment());
             }
         });
-
-
 
 
         getStations();

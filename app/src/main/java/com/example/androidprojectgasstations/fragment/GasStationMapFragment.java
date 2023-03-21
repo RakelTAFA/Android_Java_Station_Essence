@@ -17,7 +17,7 @@ public class GasStationMapFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_gas_station_list, container, false);
+        view = inflater.inflate(R.layout.fragment_gas_station_map, container, false);
         return view;
     }
 }

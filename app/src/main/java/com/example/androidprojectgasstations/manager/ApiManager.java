@@ -36,7 +36,6 @@ public class ApiManager {
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-
         Retrofit retrofitClock = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(client)

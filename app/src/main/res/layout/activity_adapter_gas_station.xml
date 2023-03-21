@@ -3,7 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".adapter_gas_station">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/gas_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="50dp"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/gas_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="37dp"
+        android:text="PRICE"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/gas_logo"
+        app:layout_constraintTop_toTopOf="@id/gas_logo" />
+
+    <TextView
+        android:id="@+id/gas_address"
+        app:layout_constraintLeft_toRightOf="@id/gas_logo"
+        app:layout_constraintTop_toTopOf="@id/gas_logo"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADDRESS"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="70dp" />
+
+    <TextView
+        android:id="@+id/gas_city"
+        app:layout_constraintLeft_toRightOf="@id/gas_logo"
+        app:layout_constraintTop_toBottomOf="@id/gas_address"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CITY"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <TextView
+        android:id="@+id/gas_postal_code"
+        app:layout_constraintLeft_toRightOf="@id/gas_logo"
+        app:layout_constraintTop_toBottomOf="@id/gas_city"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01000"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <TextView
+        android:id="@+id/gas_type"
+        app:layout_constraintLeft_toRightOf="@id/gas_logo"
+        app:layout_constraintBottom_toBottomOf="@id/gas_logo"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SP98"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="65dp"/>
+
+    <TextView
+        android:id="@+id/gas_hour"
+        app:layout_constraintTop_toBottomOf="@id/gas_price"
+        app:layout_constraintLeft_toLeftOf="@id/gas_price"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24h/24"
+        tools:layout_editor_absoluteX="298dp"
+        tools:layout_editor_absoluteY="105dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

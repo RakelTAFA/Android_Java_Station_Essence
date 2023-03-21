@@ -28,6 +28,7 @@ public class GasStationsActivityController {
                 {
                     GasStation gs = response.body();
                     Log.e("onResponse", "Successful_response_api : " + gs.getRecords().toString());
+                    CacheManager.getInstance().setGasStation(gs);
                     callBack.getGasStationsResponseSuccess(gs);
                 }
                 else
@@ -45,6 +46,7 @@ public class GasStationsActivityController {
         });
     }
 
+    /*  Pas utile ici
     public void getGasStationThread(IGasStationDataManagerCallBack callBack)
     {
         Runnable r = new Runnable() {
@@ -74,4 +76,6 @@ public class GasStationsActivityController {
         };
         new Thread(r).start();
     }
+    */
+    // Deuxième méthode mais pas utile ici
 }
