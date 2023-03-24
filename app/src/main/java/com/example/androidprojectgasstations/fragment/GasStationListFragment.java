@@ -51,21 +51,14 @@ public class GasStationListFragment extends Fragment {
         // ici se passe l'envoi mais il faut les données et pas une array vide comme là
         // Il me faut ArrayList<>(GasStationFields)
         ArrayList<GasStationFields> gasStationFields = new ArrayList<GasStationFields>();
-        int i = 0;
 
-        for (GasStation record : CacheManager.getInstance().getGasStation())
-        {
-            gasStationFields.add(CacheManager.getInstance().getGasStation().getRecords().get(i).getFields());
-            i++;
-        }
+        // Il faudra modifier le get(0) par l'objet lui-même plus tard
+        gasStationFields.add(CacheManager.getInstance().getGasStation().getRecords().get(0).getFields());
 
-        GasStationAdapter gasStationAdapter = new GasStationAdapter(getActivity(), CacheManager.getInstance().getGasStation().getRecords().get(0).getFields());
+        // Avec ce qu'il y a juste au dessus, modifier le constructeur, remplacer ArrayList par simple objet !
+        GasStationAdapter gasStationAdapter = new GasStationAdapter(getActivity(), gasStationFields);
         ListView listView = (ListView) view.findViewById(R.id.gas_station_list_view);
         listView.setAdapter(gasStationAdapter);
-
-
-
-
 
         return view;
     }

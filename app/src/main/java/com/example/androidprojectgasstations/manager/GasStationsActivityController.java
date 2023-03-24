@@ -45,37 +45,4 @@ public class GasStationsActivityController {
             }
         });
     }
-
-    /*  Pas utile ici
-    public void getGasStationThread(IGasStationDataManagerCallBack callBack)
-    {
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                try
-                {
-                    Response<GasStation> response = apiManager.getGasStationService().getGasStations().execute();
-                    if (response.isSuccessful())
-                    {
-                        GasStation gs = response.body();
-                        Log.e("onResponse", "Runnable Successful" + gs.getRecords().toString());
-                        callBack.getGasStationsResponseSuccess(gs);
-                    }
-                    else
-                    {
-                        Log.e("onResponse", "Runnable Not Successful" + response.code());
-                        callBack.getGasStationsResponseError("Runnable Erreur Server status : " + response.code());
-                    }
-                }
-                catch (IOException e)
-                {
-                    Log.e("onResponse", "Try runnable not successful : " + e.getLocalizedMessage());
-                    callBack.getGasStationsResponseError("Erreur lors de la requete : " + e.getLocalizedMessage());
-                }
-            }
-        };
-        new Thread(r).start();
-    }
-    */
-    // Deuxième méthode mais pas utile ici
 }
