@@ -1,6 +1,8 @@
 package com.example.androidprojectgasstations.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.androidprojectgasstations.R;
 import com.example.androidprojectgasstations.model.GasStationFields;
@@ -61,6 +65,10 @@ public class GasStationAdapter extends BaseAdapter {
 
         GasStationFields gasStationFields = fieldList.get(i);
         TextView gasPrice, gasCity, gasAddress, gasPostalCode, gasType;
+
+        ImageView gasStationLogo = (ImageView) gasStationLayout.findViewById(R.id.gas_logo);
+        Drawable gasLogo = ContextCompat.getDrawable(context, R.drawable.carburant);
+        gasStationLogo.setImageDrawable(gasLogo);
 
         gasPrice = (TextView) gasStationLayout.findViewById(R.id.gas_price);
         gasCity = (TextView) gasStationLayout.findViewById(R.id.gas_city);

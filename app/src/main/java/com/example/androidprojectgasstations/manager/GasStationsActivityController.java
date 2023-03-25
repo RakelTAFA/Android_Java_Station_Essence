@@ -27,8 +27,13 @@ public class GasStationsActivityController {
                 if (response.isSuccessful())
                 {
                     GasStation gs = response.body();
-                    Log.e("onResponse", "Successful_response_api : " + gs.getRecords().toString());
+
+                    if (gs != null)
+                    {
+                        Log.d("NULL", "NULL");
+                    }
                     CacheManager.getInstance().setGasStation(gs);
+                    //Log.e("onResponse", "Successful_response_api : " + gs.getRecords().toString());
                     callBack.getGasStationsResponseSuccess(gs);
                 }
                 else

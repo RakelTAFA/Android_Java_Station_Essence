@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,18 +48,18 @@ public class GasStationListFragment extends Fragment {
         spinnerSort.setAdapter(spinnerSortAdapter);
 
         ListView gasStationListView = view.findViewById(R.id.gas_station_list_view);
-
-        // ici se passe l'envoi mais il faut les données et pas une array vide comme là
-        // Il me faut ArrayList<>(GasStationFields)
         ArrayList<GasStationFields> gasStationFields = new ArrayList<GasStationFields>();
 
-        // Il faudra modifier le get(0) par l'objet lui-même plus tard
-        gasStationFields.add(CacheManager.getInstance().getGasStation().getRecords().get(0).getFields());
+        if (CacheManager.getInstance().getGasStation() != null)
+        {
+            for (int i = 0; i < CacheManager.getInstance().getGasStation().getRecords().size(); i++)
+            {
+                gasStationFields.add(CacheManager.getInstance().getGasStation().getRecords().get(i).getFields());
+            }
+        }
 
-        // Avec ce qu'il y a juste au dessus, modifier le constructeur, remplacer ArrayList par simple objet !
         GasStationAdapter gasStationAdapter = new GasStationAdapter(getActivity(), gasStationFields);
-        ListView listView = (ListView) view.findViewById(R.id.gas_station_list_view);
-        listView.setAdapter(gasStationAdapter);
+        gasStationListView.setAdapter(gasStationAdapter);
 
         return view;
     }

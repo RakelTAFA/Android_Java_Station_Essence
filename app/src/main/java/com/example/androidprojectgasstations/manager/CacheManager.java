@@ -9,10 +9,11 @@ public class CacheManager {
 
     private static CacheManager instance = null;
     private ArrayList<GasStationFields> listGasStations = new ArrayList<>();
-    GasStation gasStation;
+    GasStation gasStation = null;
+
+
     private CacheManager()
     {
-        //apiManager = ApiManager.getInstance();
     }
 
     public GasStation getGasStation() {

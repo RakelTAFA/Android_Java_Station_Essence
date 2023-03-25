@@ -16,7 +16,7 @@
         android:layout_height="100dp"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="50dp"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/carburant" />
 
     <TextView
         android:id="@+id/gas_price"
