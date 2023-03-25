@@ -60,6 +60,8 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
                 replaceFragment(new GasStationMapFragment());
             }
         });
+
+
     }
 
 
@@ -71,8 +73,10 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
                 List<GasStationRecords> listRecords = gasStation.getRecords();
                 for (GasStationRecords gsRecords : listRecords)
                 {
-                    Log.d("RECORDS", gsRecords.getRecordid());
-                    Log.d("RECORDS_FIELD", gsRecords.getFields().getAdresse());
+                    Log.d("RECORDS_ID", gsRecords.getRecordid());
+                    Log.d("RECORDS_ADDRESS", gsRecords.getFields().getAdresse());
+                    Log.d("RECORDS_TYPE", gsRecords.getFields().getPrixNom());
+                    Log.d("RECORDS_PRICE", "" + gsRecords.getFields().getPrixValeur());
                 }
             }
 
@@ -87,30 +91,14 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
     @Override
     public void getGasStationsResponseSuccess(GasStation gs) {
         Log.e("SUCCESS main activity", "SUCCESS main activity");
-        /*
-        TextView t = findViewById(R.id.tv_hello);
-        t.setText(clock.getDatetime());
-         */
+
     }
 
 
     @Override
     public void getGasStationsResponseError(String message) {
         Log.e("ERROR main activity", "Response Error " + message);
-        /*
-        AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
-        alert.setTitle("Erreur").setMessage("une erreur est apparue lors de la recherche de données");
-        alert.setCancelable(false);
-        alert.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        alert.setIcon(R.drawable.ic_launcher_background);
-        alert.create().show();
 
-         */
     }
 
     // Fragments

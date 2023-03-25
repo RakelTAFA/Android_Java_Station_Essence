@@ -1,5 +1,6 @@
 package com.example.androidprojectgasstations.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,10 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.example.androidprojectgasstations.GasStationDetailedActivity;
 import com.example.androidprojectgasstations.R;
 import com.example.androidprojectgasstations.adapter.GasStationAdapter;
 import com.example.androidprojectgasstations.manager.CacheManager;
@@ -19,11 +22,13 @@ import com.example.androidprojectgasstations.model.GasStation;
 import com.example.androidprojectgasstations.model.GasStationFields;
 import com.example.androidprojectgasstations.model.GasStationRecords;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class GasStationListFragment extends Fragment {
+public class GasStationListFragment extends Fragment implements Serializable {
 
+    public static final String KEY_DETAILED_INTENT = "DETAIL";
     View view;
     GasStation gasStation = null;
 
@@ -60,6 +65,16 @@ public class GasStationListFragment extends Fragment {
 
         GasStationAdapter gasStationAdapter = new GasStationAdapter(getActivity(), gasStationFields);
         gasStationListView.setAdapter(gasStationAdapter);
+
+        gasStationListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                GasStationFields clickedField = gasStationFields.get(position);
+                Intent GasStationDetailIntent = new Intent(getContext(), GasStationDetailedActivity.class);
+                GasStationDetailIntent.putExtra(KEY_DETAILED_INTENT, clickedField);
+                startActivity(GasStationDetailIntent);
+            }
+        });
 
         return view;
     }
