@@ -19,60 +19,227 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
-        android:id="@+id/label1"
+        android:id="@+id/address_label"
         app:layout_constraintTop_toBottomOf="@id/detail_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="5dp"
         app:layout_constraintHorizontal_bias="0.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LABEL1"
+        android:text="Adresse :"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="268dp" />
 
     <TextView
-        android:id="@+id/content_label1"
-        app:layout_constraintTop_toBottomOf="@id/label1"
+        android:id="@+id/address_content"
+        app:layout_constraintTop_toBottomOf="@id/address_label"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         android:layout_marginTop="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CONTENT_LABEL1"
+        android:text="CONTENT_ADDRESS"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="292dp" />
 
     <TextView
-        android:id="@+id/label2"
-        app:layout_constraintTop_toBottomOf="@id/content_label1"
+        android:id="@+id/city_label"
+        app:layout_constraintTop_toBottomOf="@id/address_content"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="5dp"
         app:layout_constraintHorizontal_bias="0.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LABEL2"
+        android:text="Ville :"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="268dp" />
 
     <TextView
-        android:id="@+id/content_label2"
-        app:layout_constraintTop_toBottomOf="@id/label2"
+        android:id="@+id/city_content"
+        app:layout_constraintTop_toBottomOf="@id/city_label"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         android:layout_marginTop="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CONTENT_LABEL2"
+        android:text="CONTENT_CITY"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="292dp" />
 
+    <TextView
+        android:id="@+id/code_label"
+        app:layout_constraintTop_toBottomOf="@id/city_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code postal :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/code_content"
+        app:layout_constraintTop_toBottomOf="@id/code_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTENT_CODE"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <TextView
+        android:id="@+id/gas_type_label"
+        app:layout_constraintTop_toBottomOf="@id/code_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/gas_type_content"
+        app:layout_constraintTop_toBottomOf="@id/gas_type_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTENT_GAS_TYPE"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <TextView
+        android:id="@+id/price_value_label"
+        app:layout_constraintTop_toBottomOf="@id/gas_type_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prix :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/price_value_content"
+        app:layout_constraintTop_toBottomOf="@id/price_value_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRICE VALUE CONTENT"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <TextView
+        android:id="@+id/update_price_label"
+        app:layout_constraintTop_toBottomOf="@id/price_value_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dernière mise à jour :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/update_price_content"
+        app:layout_constraintTop_toBottomOf="@id/update_price_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPDATE CONTENT"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <TextView
+        android:id="@+id/service_label"
+        app:layout_constraintTop_toBottomOf="@id/update_price_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Services proposées :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/service_content"
+        app:layout_constraintTop_toBottomOf="@id/service_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTENT_SERVICE"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <TextView
+        android:id="@+id/availability_hours_label"
+        app:layout_constraintTop_toBottomOf="@id/service_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disponibilité 24h/24 :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/availability_hours_content"
+        app:layout_constraintTop_toBottomOf="@id/availability_hours_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOURS_CONTENT"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="292dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
