@@ -1,15 +1,13 @@
 package com.example.androidprojectgasstations;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ImageView;
 
 public class LauncherActivity extends AppCompatActivity {
 
-    private final int SPLASH_SCREEN_TIMEOUT = 1000;
+    private final int SPLASH_SCREEN_TIMEOUT = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

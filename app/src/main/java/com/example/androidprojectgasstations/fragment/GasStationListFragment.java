@@ -26,7 +26,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class GasStationListFragment extends Fragment implements Serializable {
+public class GasStationListFragment extends Fragment /*implements Serializable*/ {
 
     public static final String KEY_DETAILED_INTENT = "DETAIL";
     View view;
@@ -46,8 +46,8 @@ public class GasStationListFragment extends Fragment implements Serializable {
         Spinner spinnerChoice = (Spinner) view.findViewById(R.id.request_choice_spinner);
         Spinner spinnerSort = (Spinner) view.findViewById(R.id.request_sort_spinner);
 
-        ArrayAdapter<String> spinnerChoiceAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, spinnerChoiceList);
-        ArrayAdapter<String> spinnerSortAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, spinnerSortList);
+        ArrayAdapter<String> spinnerChoiceAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, spinnerChoiceList);
+        ArrayAdapter<String> spinnerSortAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, spinnerSortList);
 
         spinnerChoice.setAdapter(spinnerChoiceAdapter);
         spinnerSort.setAdapter(spinnerSortAdapter);
@@ -63,7 +63,7 @@ public class GasStationListFragment extends Fragment implements Serializable {
             }
         }
 
-        GasStationAdapter gasStationAdapter = new GasStationAdapter(getActivity(), gasStationFields);
+        GasStationAdapter gasStationAdapter = new GasStationAdapter(getContext(), gasStationFields);
         gasStationListView.setAdapter(gasStationAdapter);
 
         gasStationListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

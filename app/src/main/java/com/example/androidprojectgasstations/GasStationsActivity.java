@@ -38,8 +38,8 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getStations();
         setContentView(R.layout.activity_gas_stations);
+        getStations();
         replaceFragment(new GasStationListFragment());
 
         listFragmentButton = findViewById(R.id.list_button_fragment);
