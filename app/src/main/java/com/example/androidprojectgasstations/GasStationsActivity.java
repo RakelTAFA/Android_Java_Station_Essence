@@ -73,9 +73,9 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
                 List<GasStationRecords> listRecords = gasStation.getRecords();
                 for (GasStationRecords gsRecords : listRecords)
                 {
-                    Log.d("RECORDS_ID", gsRecords.getRecordid());
-                    Log.d("RECORDS_ADDRESS", gsRecords.getFields().getAdresse());
-                    Log.d("RECORDS_TYPE", gsRecords.getFields().getPrixNom());
+                    Log.d("RECORDS_ID", "" + gsRecords.getRecordid());
+                    Log.d("RECORDS_ADDRESS", "" + gsRecords.getFields().getAdresse());
+                    Log.d("RECORDS_TYPE", "" + gsRecords.getFields().getPrixNom());
                     Log.d("RECORDS_PRICE", "" + gsRecords.getFields().getPrixValeur());
                 }
             }
