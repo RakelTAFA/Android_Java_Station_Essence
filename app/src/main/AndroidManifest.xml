@@ -4,7 +4,7 @@
     package="com.example.androidprojectgasstations">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!-- android:theme="@style/Theme.AndroidProjectGasStations" : ligne 16 -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +13,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidProjectGasStations"
+
         tools:targetApi="31">
         <activity
             android:name=".LauncherActivity"
+            android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

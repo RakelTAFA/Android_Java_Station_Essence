@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface GasStationService {
 
-    @GET("?dataset=prix-carburants-fichier-instantane-test-ods-copie")
+    @GET("?dataset=prix-carburants-fichier-instantane-test-ods-copie&rows=40")
     Call<GasStation> getGasStations();
 
 }
