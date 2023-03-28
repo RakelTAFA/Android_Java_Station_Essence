@@ -26,7 +26,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class GasStationListFragment extends Fragment /*implements Serializable*/ {
+public class GasStationListFragment extends Fragment {
 
     public static final String KEY_DETAILED_INTENT = "DETAIL";
     View view;
