@@ -4,7 +4,7 @@
     package="com.example.androidprojectgasstations">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--  -->
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProjectGasStations"
         tools:targetApi="31">
+        <activity
+            android:name=".GasStationMapActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -22,10 +25,11 @@
 
         <activity
             android:name=".LauncherActivity"
-            android:theme="@style/SplashTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,9 +38,8 @@
             android:exported="false" />
         <activity
             android:name=".GasStationsActivity"
-            android:theme="@style/Theme.AndroidProjectGasStations"
-            android:exported="false">
-        </activity>
+            android:exported="false"
+            android:theme="@style/Theme.AndroidProjectGasStations" />
     </application>
 
 </manifest>

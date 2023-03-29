@@ -5,16 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 
 import com.example.androidprojectgasstations.adapter.GasStationAdapter;
 import com.example.androidprojectgasstations.fragment.GasStationListFragment;
-import com.example.androidprojectgasstations.fragment.GasStationMapFragment;
 import com.example.androidprojectgasstations.manager.IGasStationDataManagerCallBack;
 import com.example.androidprojectgasstations.manager.GasStationsActivityController;
 import com.example.androidprojectgasstations.model.GasStation;
@@ -57,11 +55,10 @@ public class GasStationsActivity extends AppCompatActivity implements IGasStatio
             @Override
             public void onClick(View v)
             {
-                replaceFragment(new GasStationMapFragment());
+                Intent toMap = new Intent(getApplicationContext(), GasStationMapActivity.class);
+                startActivity(toMap);
             }
         });
-
-
     }
 
 
