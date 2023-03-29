@@ -13,7 +13,7 @@ public class GasStationFields implements Serializable
 
     @SerializedName("geom")
     @Expose
-    private List<Float> geom;
+    private List<Double> geom;
     @SerializedName("reg_name")
     @Expose
     private String regName;
@@ -82,11 +82,11 @@ public class GasStationFields implements Serializable
     private String horairesAutomate2424;
     private final static long serialVersionUID = -2388927593355127875L;
 
-    public List<Float> getGeom() {
+    public List<Double> getGeom() {
         return geom;
     }
 
-    public void setGeom(List<Float> geom) {
+    public void setGeom(List<Double> geom) {
         this.geom = geom;
     }
 
